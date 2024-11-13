@@ -1,0 +1,257 @@
+@import 'variables';
+@import 'utilities';
+@import 'mixins';
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+ul, ol, li {
+	list-style: none;
+}
+
+body {
+	line-height: 1.5;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+	font-family: $ff-sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	color: #666;
+}
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+
+input, button, textarea, select {
+	font: inherit;
+	border: none;
+}
+input, textarea {
+	border: 1px solid $grayDark;
+	border-radius: 5px;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+}
+
+input {
+	height: $inputHeight;
+}
+h1, h2, h3, .text-black {
+	color: #000;
+}
+
+
+.notes-categories-aside {
+	border-right: 1px solid $gray;
+	padding-right: 1em;
+	ul {
+		padding: 0;
+	}
+	.notes-logo {
+		position: relative;
+		font-size: 2rem;
+		margin-top: 8px;
+		.fa-feather {
+			color: $primary;
+			margin-right: 10px;
+			font-size: 1.5rem;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			border-bottom: 2px solid $primary;
+			width: 10px;
+			bottom: 8px; left: 10px;
+			display: inline-block;
+		}
+	}
+}
+
+.aside-nav {
+	margin-block: 1em;
+	&:first-of-type {
+		border-bottom: 1px solid $gray;
+		padding-bottom: 1em;
+	}
+	.nav-title {
+		margin-left: 5px;
+		margin-bottom: 10px;
+	}
+	li {
+		a {
+			display: block;
+			padding: 8px 10px;
+			background-color: transparent;
+			border-radius: 4px;
+			transition: .3s background-color ease;
+			&::before {
+				content: "\f02b";
+				font-family: "Font Awesome 6 Free";
+				font-weight: 600;
+				margin-right: 10px;
+			}
+		}
+		a:hover, a.active {
+			background-color: $activeState;
+		}
+		a.active {
+			.fa-solid {
+				color: $primary;	
+			}
+		}
+	}
+	&.nav-notes-type {
+		li a::before {
+			content: none;
+		}
+		li a .fa-solid {
+			margin-right: 8px;
+			transition: .3s color ease;
+		}
+		
+	}
+}
+
+
+.section-main {
+	.notes-header {
+		border-bottom: 1px solid $gray;
+		margin-right: -15px;
+		height: 60px;
+		align-items: center;
+		padding-inline: 15px;
+		.search-and-settings {
+			.search-bar {
+				background-image: url(../../img/mag-glass.webp);
+				background-repeat: no-repeat;
+				background-size: 22px;
+				padding-left: 30px;
+				background-position: 5px center;
+				width: 250px;;
+
+			}
+		}
+	}
+	.main-cols-wrap {
+		> div {
+			padding-block: 15px;
+			padding-inline: 15px;
+			border-right: 1px solid $gray;
+			&:last-of-type {
+				border-right: none;
+				padding-right: 0;
+			}
+		}
+	}
+	.notes-list {
+		ul {
+			padding: 0;
+			li {
+				.note {
+					border-bottom: 1px solid $gray;
+					//margin-block: 1em;
+					padding-block: 1em;
+					padding-inline: 1em;
+					background-color: transparent;
+					border-radius: 5px;
+					position: relative;
+					transition: .3s background-color ease;
+					&.active {
+						background-color: $activeState;
+						border-color: transparent;
+					}
+					h2 {
+						font-size: 1rem;
+						line-height: 1.25;
+					}
+					.tags {
+						display: flex;
+						gap: 1em;
+						margin-block: 1em;
+						li {
+							background-color: $gray;
+							padding: 0 5px;
+							border-radius: 3px;
+						}
+					}
+					.show-note-button {
+						position: absolute;
+						inset: 0;
+						width: 100%; height: 100%;
+					}
+				}
+				&:first-of-type .note {
+					margin-top: 2em;
+				}
+				&:last-of-type .note {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+.selected-note {
+	.selected-note-details {
+		ul {
+			padding: 0;
+			max-width: 200px;
+			li {
+				display: flex;
+				justify-content: space-between;
+				gap: 1em;
+				margin-block: 1em;
+				i {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+	.selected-note-content {
+		border-top: 1px solid $gray;
+		padding-block: 1em;
+		min-height: 70vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		p, li {
+			color: #333;
+		}
+		p {
+			margin-block: 1em;
+		}
+	}
+	.selected-note-footer {
+		border-top: 1px solid $gray;
+		padding-block: 1em;
+	 	.d-flex {
+	 		gap: 1em;
+	 	}
+	}
+}
+
+.selected-note-settings-col {
+	.btn {
+		margin-bottom: .5em;
+		text-align: left;
+		font-weight: 900;
+		i {
+			margin-right: 5px;
+		}
+	}
+}

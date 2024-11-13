@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Notes App</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/styles/css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="d-flex--justify">
+			<aside class="notes-categories-aside | col-15">
+				<header class="aside-header">
+					<h1 class="ff-cursive | notes-logo">
+						<i class="fa-solid fa-feather"></i>
+						Notes
+					</h1>
+				</header>
+				<nav class="aside-nav nav-notes-type">
+					<ul>
+						<li>
+							<a href="#" class="active">
+								<i class="fa-solid fa-house" aria-hidden="true"></i>
+								All Notes
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+								Archived Notes
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="aside-nav nav-tags">
+					<h3 class="nav-title | color-gray">Tags</h3>
+					<ul>
+						<li>
+							<a href="#">Cooking</a>
+						</li>
+						<li>
+							<a href="#">Dev</a>
+						</li>
+						<li>
+							<a href="#">Fitness</a>
+						</li>
+						<li>
+							<a href="#">Health</a>
+						</li>
+						<li>
+							<a href="#">Personal</a>
+						</li>
+						<li>
+							<a href="#">React</a>
+						</li>
+						<li>
+							<a href="#">Recipes</a>
+						</li>
+						<li>
+							<a href="#">Shopping</a>
+						</li>
+						<li>
+							<a href="#">Travel</a>
+						</li>
+						<li>
+							<a href="#">TypeScript</a>
+						</li>
+					</ul>
+				</nav>
+				
+			</aside>
+			<section class="col-85 | section-main">
+				<header class="notes-header | d-flex--justify">
+					<h1>All Notes</h1>
+					<div class="search-and-settings">
+						<input type="search" placeholder="Search by title, content or tags..." class="search-bar">
+						<button>
+							<i class="fa-solid fa-gear"></i>
+						</button>
+					</div>
+				</header>
+				<div class="d-flex | main-cols-wrap">
+					<div class="notes-list | col-25">
+						<button class="btn btn--full-width">+ Create New Note</button>
+						<ul>
+							<li>
+								<div class="note active">
+									<h2>React Performance Optimization</h2>
+									<ul class="tags">
+										<li>Dev</li>
+										<li>React</li>
+									</ul>
+									<p class="date">29 Oct 2024</p>
+									<button class="show-note-button">
+										<span class="sr-only">Edit note</span>
+									</button>
+								</div>
+							</li>
+							<li>
+								<div class="note">
+									<h2>Japan Travel Planning</h2>
+									<ul class="tags">
+										<li>Travel</li>
+										<li>Personal</li>
+									</ul>
+									<p class="date">28 Oct 2024</p>
+									<button class="show-note-button">
+										<span class="sr-only">Edit note</span>
+									</button>
+								</div>
+							</li>
+							<li>
+								<div class="note">
+									<h2>Favorite Pasta Recipes</h2>
+									<ul class="tags">
+										<li>Cooking</li>
+										<li>Recipes</li>
+									</ul>
+									<p class="date">27 Oct 2024</p>
+									<button class="show-note-button">
+										<span class="sr-only">Edit note</span>
+									</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="selected-note | col-55">
+						<header class="selected-note-header">
+							<h1 class="seclected-note-title">React Performance Optimization</h1>
+							<div class="selected-note-details">
+								<ul>
+									<li>
+										<span>
+											<i class="fa-solid fa-tag"></i>Tags
+										</span>
+										<span>Dev, React</span>
+									</li>
+									<li>
+										<span>
+											<i class="fa-regular fa-clock"></i>Last edited
+										</span>
+										<span>29 Oct 2024</span>
+									</li>
+								</ul>
+							</div>
+						</header>
+						<div class="selected-note-content">
+							<div>
+								<p>Key performance optimization techniques:</p>
+								<p>1. Code Splitting</p>
+								<ul>
+									<li>Use React.lazy() for route-based splitting</li>
+									<li>Implement dynamic imports for heavy components</li>
+								</ul>
+								<p>2. Memoization</p>
+								<ul>
+									<li>useMemo for expensive calculations</li>
+									<li>use callBack for function props</li>
+									<li>React.memo for component optimization</li>
+								</ul>
+								<p>TODO: Benchmark current application and identify bottlenecks.</p>
+							</div>
+							<footer class="selected-note-footer">
+								<div class="d-flex">
+									<button class="btn">Save Note</button>
+									<button class="btn btn--gray">Cancel</button>
+								</div>
+							</footer>
+						</div>
+					</div>
+					<div class="selected-note-settings-col | col-20">
+						<button class="btn btn--white btn--full-width">
+							<i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+							Archive Note
+						</button>
+						<button class="btn btn--white btn--full-width">
+							<i class="fa-solid fa-trash" aria-hidden="true"></i>
+							Delete Note
+						</button>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/script.js" defer></script>
+</body>
+</html>
