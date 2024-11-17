@@ -27,7 +27,7 @@
 	&--full-width {
 		width: 100%;
 	}
-	&--gray {
+	&--gray, &:disabled {
 		background-color: $gray;
 		color: #000;
 	}
